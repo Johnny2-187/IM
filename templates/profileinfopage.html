@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px;
+        }
+        .left-side {
+            width: 45%;
+        }
+        .right-side {
+            width: 45%;
+        }
+        .profile-icon {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .profile-icon img {
+            width: 80px;
+            height: 80px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 5px;
+            box-sizing: border-box;
+        }
+        .edit-profile-btn {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.4s;
+        }
+        .edit-profile-btn:hover {
+            background-color: #0056b3;
+            color: white;
+        }
+        .recent-activity {
+            border: 1px solid #f0f0f0;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left-side">
+            <div class="profile-icon">
+                <img src="profile-icon.png" alt="Profile Icon">
+            </div>
+            <form>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" placeholder="Enter your name">
+                </div>
+                <div class="form-group">
+                    <label for="contact-number">Contact Number</label>
+                    <input type="text" id="contact-number" placeholder="Enter your contact number">
+                </div>
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <input type="text" id="address" placeholder="Enter your address">
+                </div>
+                <a class="edit-profile-btn" href="{% url 'profile' %}">EDIT BUTTON</a>
+            </form>
+        </div>
+        <div class="right-side">
+            <div class="recent-activity">
+                <h3>Recent Activity</h3>
+                <p>Order #12345 - Delivered</p>
+                <p>Order #12346 - Delivered</p>
+                <p>Order #12347 - Delivered</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
