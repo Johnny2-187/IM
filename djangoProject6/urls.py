@@ -15,19 +15,17 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-
 from django.urls import path, include
-
 from IM2PMdjangoProject6 import views
-
-# from .views import profile_detail
+from django.conf import settings
+from django.conf.urls.static import static
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
-
     path('', include('IM2PMdjangoProject6.urls')),
     path('admin/', admin.site.urls),
-    path('profile/', views.profile, name='profile'),
-    path('profileinfopage/', views.profileinfopage, name='profileinfopage'),
-
-
-]
+    path('customer_updateregpage/', views.customer_updateregpage, name='customer_updateregpage'),
+    path('customer_profileinfopage/', views.customer_profileinfopage, name='customer_profileinfopage'),
+    path('customer_updateregpage/', views.profile_information_page_view, name='profile_information_page'),
+    path('logout/', auth_views.LogoutView.as_view(), name='logout'),  # Logout URL pattern
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
